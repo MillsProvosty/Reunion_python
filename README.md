@@ -9,7 +9,9 @@
 
 ## Tasks
 
-We're developing a small application to split expenses after a group of friends get together for a reunion. This will track how much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of how much each person owes or is owed. Use tests to drive your development.
+This is a small application to split expenses after a group of friends get together for a reunion. This will track how
+ much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of how much each person owes or is owed. 
+ TDD was used to drive development. 
 
 
 
@@ -70,7 +72,11 @@ pry(main)> reunion.activities
 
 Use TDD to update your Reunion class to respond to the following interaction pattern.
 
-For the `breakout` method, the key is a person's name and the value is what they owe for the whole reunion. This should be the combination of what they owe from all activities. Again, a negative value means they are owed money. In the following example, `"Maria"` owes 10 from brunch and is owed 20 from drinks, so her final amount owed in the breakout is -10.
+For the `breakout` method, the key is a person's name and the value is what they owe 
+for the whole reunion. This should be the combination of what they owe from all 
+activities. Again, a negative value means they are owed money. 
+In the following example, `"Maria"` owes 10 from brunch and is owed 20 from drinks, 
+so her final amount owed in the breakout is -10.
 
 ```ruby
 pry(main)> require './lib/reunion'
