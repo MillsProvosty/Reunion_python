@@ -8,14 +8,14 @@ class TestActivity(TestCase):
 
     def test_participants_is_hash(self):
         activity = Activity("Brunch")
-        assert activity.participants, {}
+        assert type(activity.participants), hash
 
     def test_participants_returns_name_cost(self):
         activity = Activity("Brunch")
         activity.add_participant("Maria", 20)
         activity.add_participant("Luther", 40)
         assert type(activity.participants), hash
-        assert activity.participants.keys[0],"Maria"
+        assert activity.participants, {"Maria": 20, "Luther": 40}
 
     def test_calculates_total_cost(self):
         activity = Activity("Brunch")
