@@ -11,17 +11,19 @@
 
 This is a small application to split expenses after a group of friends get together for a reunion. This will track how
  much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of
-  how much each person owes or is owed. I will use tests in unittest to drive development.
+  how much each person owes or is owed. It uses tests in unittest to drive development.
 
 
 
 ### Iteration 2: Activity Calculations and creating Reunions
 
-Use TDD to update the Activity class so that it responds to the following interaction pattern.
+For the `split` method, it is assumed that the cost is evenly distributed amongst participants. 
+It should be the total cost divided by the number of participants.
 
-For the `split` method, it is assumed that the cost is evenly distributed amongst participants. It should be the total cost divided by the number of participants.
-
-For the `owed` method, the amount each person owes is the difference between what they paid and the `split`. If a participant paid less than their fair share they owe a positive amount. If a participant paid more than their fair share they owe a negative amount (meaning they are owed money).
+For the `owed` method, the amount each person owes is the difference between what they paid and 
+the `split`. If a participant paid less than their fair share they owe a positive amount. 
+If a participant paid more than their fair share they owe a negative amount 
+(meaning they are owed money).
 
 ```ruby
 pry(main)> require './lib/activity'
