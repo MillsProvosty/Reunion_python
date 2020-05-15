@@ -15,35 +15,6 @@ This is a small application to split expenses after a group of friends get toget
 
 
 
-### Iteration 2: Activity Calculations and creating Reunions
-
-Use TDD to update the Activity class so that it responds to the following interaction pattern.
-
-For the `split` method, it is assumed that the cost is evenly distributed amongst participants. It should be the total cost divided by the number of participants.
-
-For the `owed` method, the amount each person owes is the difference between what they paid and the `split`. If a participant paid less than their fair share they owe a positive amount. If a participant paid more than their fair share they owe a negative amount (meaning they are owed money).
-
-```ruby
-pry(main)> require './lib/activity'
-# => true
-
-pry(main)> activity = Activity.new("Brunch")
-# => #<Activity:0x007fe4ca1df568 ...>
-
-pry(main)> activity.add_participant("Maria", 20)
-
-pry(main)> activity.add_participant("Luther", 40)
-
-pry(main)> activity.total_cost
-# => 60
-
-pry(main)> activity.split
-# => 30
-
-pry(main)> activity.owed
-# => {"Maria" => 10, "Luther" => -10}
-```
-
 Additionaly, use TDD to create a Reunion class that responds to the following interaction pattern:
 
 ```ruby
