@@ -6,48 +6,12 @@
 * Clone YOUR fork
 * Complete the activity below
 * Push your solution to your fork
-* Submit a pull request from your repository to the turingschool-examples repository
-  * Make sure to put your name in your PR!
 
 ## Tasks
 
 We're developing a small application to split expenses after a group of friends get together for a reunion. This will track how much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of how much each person owes or is owed. Use tests to drive your development.
 
-### Iteration 1: Creating Activities
 
-Use TDD to create an Activity class that responds to the following interaction pattern.
-
-For the `add_participant` method, the first argument represents the name of someone who participated in the activity, and the second argument represents how much they paid for the activity.
-
-```ruby
-pry(main)> require './lib/activity'
-# => true
-
-pry(main)> activity = Activity.new("Brunch")
-# => #<Activity:0x007fe4ca1df568 ...>
-
-pry(main)> activity.name
-# => "Brunch"
-
-pry(main)> activity.participants
-# => {}
-
-pry(main)> activity.add_participant("Maria", 20)
-
-pry(main)> activity.participants
-# => {"Maria" => 20}
-
-pry(main)> activity.total_cost
-# => 20
-
-pry(main)> activity.add_participant("Luther", 40)
-
-pry(main)> activity.participants
-# => {"Maria" => 20, "Luther" => 40}
-
-pry(main)> activity.total_cost
-# => 60
-```
 
 ### Iteration 2: Activity Calculations and creating Reunions
 
