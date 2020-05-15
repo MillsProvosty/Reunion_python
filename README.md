@@ -9,7 +9,9 @@
 
 ## Tasks
 
-We're developing a small application to split expenses after a group of friends get together for a reunion. This will track how much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of how much each person owes or is owed. Use tests to drive your development.
+This is a small application to split expenses after a group of friends get together for a reunion. This will track how
+ much each person spent on a particular activity, how much each person owed, and ultimately print out a summary of
+  how much each person owes or is owed. I will use tests in unittest to drive development.
 
 
 
