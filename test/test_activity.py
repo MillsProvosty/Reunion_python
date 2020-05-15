@@ -38,3 +38,10 @@ class TestActivity(TestCase):
         activity.add_participant("Luther", 40)
 
         assert activity.owed(), {'Maria': 10, 'Luther': -10}
+
+    def test_breakout(self):
+        activity = Activity("Brunch")
+        activity.add_participant("Maria", 20)
+        activity.add_participant("Luther", 40)
+
+        assert activity.owed(), {'Maria': 10, 'Luther': -10}
