@@ -1,9 +1,12 @@
 from unittest import TestCase
+
 from lib.reunion import Reunion
 from lib.activity import Activity
 
 
+
 class TestReunion(TestCase):
+
     def test_it_has_name(self):
         reunion = Reunion("Lambert Family Reunion")
 
@@ -36,7 +39,6 @@ class TestReunion(TestCase):
         activity_2.add_participant("Louis", 0)
         reunion.add_activity(activity_2)
         assert reunion.total_cost, 180
-
-        assert reunion.breakout(), {'Maria': -10, "Luther": -30, "Louis": 40}
-        # assert reunion.summary(), "Maria: -10\nLuther: -30\nLouis: 40"
+        assert reunion.breakout(), {"Maria": -10, "Luther": -30, "Louis": 40}
+        assert type(reunion.summary()), String
 
