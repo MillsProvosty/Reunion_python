@@ -29,7 +29,48 @@ activities. Again, a negative value means they are owed money.
 In the following example, `"Maria"` owes 10 from brunch and is
 owed 20 from drinks, so her final amount owed in the breakout is -10.
 
+```ruby
+pry(main)> require './lib/reunion'
+# => true
 
+pry(main)> reunion = Reunion.new("1406 BE")
+# => #<Reunion:0x007fe4ca1defc8 ...>
+
+pry(main)> activity_1 = Activity.new("Brunch")
+
+pry(main)> activity_1.add_participant("Maria", 20)
+
+pry(main)> activity_1.add_participant("Luther", 40)
+
+pry(main)> reunion.add_activity(activity_1)
+
+pry(main)> reunion.total_cost
+# => 60
+
+pry(main)> activity_2 = Activity.new("Drinks")
+
+pry(main)> activity_2.add_participant("Maria", 60)
+
+pry(main)> activity_2.add_participant("Luther", 60)
+
+pry(main)> activity_2.add_participant("Louis", 0)
+
+pry(main)> reunion.add_activity(activity_2)
+
+pry(main)> reunion.total_cost
+# => 180
+
+pry(main)> reunion.breakout
+# => {"Maria" => -10, "Luther" => -30, "Louis" => 40}
+
+pry(main)> reunion.summary
+# => "Maria: -10\nLuther: -30\nLouis: 40"
+
+pry(main)> puts reunion.summary
+Maria: -10
+Luther: -30
+Louis: 40
+```
 
 ### Iteration 4: Detailed Breakout
 

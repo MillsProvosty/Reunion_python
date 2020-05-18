@@ -30,13 +30,13 @@ class TestReunion(TestCase):
 
         assert reunion.total_cost, 60
 
-        activity_2 = Activity.new("Drinks")
+        activity_2 = Activity("Drinks")
         activity_2.add_participant("Maria", 60)
         activity_2.add_participant("Luther", 60)
         activity_2.add_participant("Louis", 0)
         reunion.add_activity(activity_2)
-        reunion.total_cost
+        assert reunion.total_cost, 180
 
-        assert reunion.breakout, {"Maria": -10, "Luther": -30, "Louis": 40}
-        assert reunion.summary, "Maria: -10\nLuther: -30\nLouis: 40"
+        assert reunion.breakout(), {"Maria": -10, "Luther": -30, "Louis": 40}
+        # assert reunion.summary(), "Maria: -10\nLuther: -30\nLouis: 40"
 
