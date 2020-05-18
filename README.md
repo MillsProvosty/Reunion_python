@@ -14,63 +14,6 @@ This is a small application to split expenses after a group of friends get toget
  TDD was used to drive development. 
 
 
-
-Additionaly, use TDD to create a Reunion class that responds to the following interaction pattern:
-`
-
-### Iteration 3: Reunion Calculations
-
-Use TDD to update your Reunion class to respond to the following interaction pattern.
-
-For the `breakout` method, the key is a person's name and the value is what they owe 
-for the whole reunion. This should be the combination of what they owe from all 
-activities. Again, a negative value means they are owed money. 
-In the following example, `"Maria"` owes 10 from brunch and is owed 20 from drinks, 
-so her final amount owed in the breakout is -10.
-
-```ruby
-pry(main)> require './lib/reunion'
-# => true
-
-pry(main)> reunion = Reunion.new("1406 BE")
-# => #<Reunion:0x007fe4ca1defc8 ...>
-
-pry(main)> activity_1 = Activity.new("Brunch")
-
-pry(main)> activity_1.add_participant("Maria", 20)
-
-pry(main)> activity_1.add_participant("Luther", 40)
-
-pry(main)> reunion.add_activity(activity_1)
-
-pry(main)> reunion.total_cost
-# => 60
-
-pry(main)> activity_2 = Activity.new("Drinks")
-
-pry(main)> activity_2.add_participant("Maria", 60)
-
-pry(main)> activity_2.add_participant("Luther", 60)
-
-pry(main)> activity_2.add_participant("Louis", 0)
-
-pry(main)> reunion.add_activity(activity_2)
-
-pry(main)> reunion.total_cost
-# => 180
-
-pry(main)> reunion.breakout
-# => {"Maria" => -10, "Luther" => -30, "Louis" => 40}
-
-pry(main)> reunion.summary
-# => "Maria: -10\nLuther: -30\nLouis: 40"
-
-pry(main)> puts reunion.summary
-Maria: -10
-Luther: -30
-Louis: 40
-```
-
 ### Iteration 4: Detailed Breakout
 
 Use TDD to create a `detailed_breakout` method. This method should return a hash with a person's name as a key, and an array as a value. That array should contain hashes that represent what that person owes for a particular activity. Specifically, each of those hashes should have three keys:

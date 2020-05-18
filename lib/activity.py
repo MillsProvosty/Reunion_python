@@ -1,3 +1,4 @@
+
 class Activity:
 
     def __init__(self, name):
@@ -14,11 +15,11 @@ class Activity:
         participants = len(self.participants.keys())
         return self.total_cost() / participants
 
-    # def owed(self):
-    #     new = {}
-    #     split = self.split()
-    #
-    #     for key, value in zip(self.participants.keys(), self.participants.values()):
-    #         new[key]: value - split
-    #
-    #     return new
+    def owed(self):
+        new_hash = {}
+        split_cost = self.split()
+
+        for key, value in zip(self.participants.keys(), self.participants.values()):
+            new_hash[key] = split_cost - value
+
+        return new_hash
