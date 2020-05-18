@@ -1,5 +1,4 @@
 from lib import activity
-from lib.activity import Activity
 
 
 class Reunion:
@@ -8,22 +7,23 @@ class Reunion:
         self.name = name
         self.activities = []
 
-    def add_activity(self, activity_name):
-        self.activities.append(Activity(activity_name))
+    def add_activity(self, name):
+        self.activities.append(name)
 
     def total_cost(self):
         for activity in self.activities:
             sum(activity.total_cost())
 
-    # def breakout(self):
-    #     new = {}
-    #     for activity.participants in self.activities:
-    #         for participant in activity.participants:
-    #             if new[participant]:
-    #                 new[participant] += activity.owed()
-    #             else:
-    #                 new[participant] = activity.owed()
+    def breakout(self):
+        new_hash = {}
+        for activity in self.activities:
+            for key, value in zip(activity.participants.keys(), activity.participants.values()):
+                if key in new_hash:
+                    new_hash[key] += value
+                else:
+                    new_hash[key] = value
 
+        return new_hash
     # def summary(self):
     #     for activity in self.activities:
     #         for activity.participants in activity:
